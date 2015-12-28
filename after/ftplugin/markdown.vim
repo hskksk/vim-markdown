@@ -71,18 +71,13 @@ func! Foldexpr_markdown(lnum)
   endif
 
   " Section
-  if  l2 =~ '^==\+\s*'
-      " next line is underlined (level 1)
-      return '>1'
-  elseif l2 =~ '^--\+\s*'
-      " next line is underlined (level 2)
-      return '>2'
-  elseif l1 =~ '^#'
-      " don't include the section title in the fold
-      return '-1'
-  elseif l0 =~ '^#[^!]'
+  if l0 =~ '^#[^!]'
       " current line starts with hashes
       return '>'.matchend(l0, '^#\+')
+  elseif l1 =~ '^$'
+      return '-1'
+  elseif l1 =~ '^#'
+      return '-1'
   endif
 
   " keep previous foldlevel

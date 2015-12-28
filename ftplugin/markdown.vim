@@ -545,7 +545,7 @@ endif
 
 command! -buffer -range=% HeaderDecrease call s:HeaderDecrease(<line1>, <line2>)
 command! -buffer -range=% HeaderIncrease call s:HeaderDecrease(<line1>, <line2>, 1)
-command! -buffer -range=% SetexToAtx call s:SetexToAtx(<line1>, <line2>)
+"command! -buffer -range=% SetexToAtx call s:SetexToAtx(<line1>, <line2>)
 command! -buffer TableFormat call s:TableFormat()
 command! -buffer Toc call s:Toc()
 command! -buffer Toch call s:Toc('horizontal')
